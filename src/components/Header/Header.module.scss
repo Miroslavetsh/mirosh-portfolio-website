@@ -1,0 +1,123 @@
+.header {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  .container {
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    max-width: 258px;
+    width: 100%;
+    padding: 21px 0 21px 21px;
+    background: #f1f1f1;
+    p {
+      max-width: 106px;
+      position: relative;
+      padding-right: 11px;
+
+      text-align: right;
+      font-size: 1.8em;
+      color: #747474;
+      line-height: 1.2;
+      &::after {
+        content: '';
+        width: 18px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        right: -18px;
+
+        background: #000;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .phone {
+    padding: 12px 50px 12px 15px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    background: #9f0707;
+    img,
+    svg {
+      animation-name: shaking;
+      animation-iteration-count: infinite;
+      transform-origin: 50% 10%;
+      animation-play-state: paused;
+      animation-delay: -0.05s;
+      animation-duration: 0.27s;
+    }
+    &:hover {
+      img,
+      svg {
+        animation-play-state: running;
+      }
+    }
+  }
+}
+
+@keyframes shaking {
+  0% {
+    transform: rotate(-4deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(4.5deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+@media (max-width: 1170px) {
+  .header {
+    .container {
+      padding-right: 10px;
+    }
+    .contact {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .header {
+    .contact {
+      padding: 10px 0 10px 10px;
+      p {
+        font-size: 1.4em;
+        &::after {
+          right: -30px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 440px) {
+  .header {
+    .contact {
+      max-width: none;
+      p {
+        display: flex;
+        align-items: center;
+        max-width: none;
+        &::after {
+          height: 18px;
+          width: 1px;
+          right: 0;
+        }
+      }
+    }
+  }
+}

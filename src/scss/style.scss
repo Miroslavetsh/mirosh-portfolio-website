@@ -1,12 +1,2 @@
 @import 'nullstyle.scss';
 @import 'roots.scss';
-
-.container {
-    max-width: 1110px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-    &--big {
-        max-width: 1920px;
-    }
-}
