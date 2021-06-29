@@ -1,6 +1,6 @@
 // Socials
-import TelegramIcon from './IconsComponents/TelegramIcon'
-import InstagramIcon from './IconsComponents/InstagramIcon'
+import TelegramIcon from "../Svg's/SocialsIcons/TelegramIcon"
+import InstagramIcon from "../Svg's/SocialsIcons/InstagramIcon"
 
 // Styles
 import styles from './Socials.module.scss'
