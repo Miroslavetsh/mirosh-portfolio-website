@@ -15,11 +15,7 @@ const Socials = () => {
     <div className={styles.socials}>
       {socLinks.map((link) => {
         return (
-          <a
-            className={styles.link}
-            rel='noreferrer'
-            target='_blank'
-            href={link.href}>
+          <a className={styles.link} rel='noreferrer' target='_blank' href={link.href}>
             {link.icon}
           </a>
         )

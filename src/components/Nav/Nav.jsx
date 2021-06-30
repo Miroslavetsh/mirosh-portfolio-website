@@ -11,12 +11,10 @@ class Nav extends Component {
 
     this.toggleLinksClass = this.toggleLinksClass.bind(this)
 
-    this.state = {
-      activeIndex: 0,
-    }
+    this.state = { activeIndex: 0 }
   }
 
-  toggleLinksClass(index, e) {
+  toggleLinksClass(index) {
     this.setState({ activeIndex: index })
   }
 
