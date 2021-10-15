@@ -1,9 +1,6 @@
 .burger {
   display: none;
-}
-
-@media (max-width: 920px) {
-  .burger {
+  @media (max-width: 920px) {
     position: absolute;
     right: 10px;
     width: 41px;
