@@ -38,7 +38,7 @@
       stroke-width: 6;
     }
   }
-  ._opened {
+  &._opened {
     .line1 {
       stroke-dasharray: 90 207;
       stroke-dashoffset: -134;

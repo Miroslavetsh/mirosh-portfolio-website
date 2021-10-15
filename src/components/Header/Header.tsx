@@ -15,7 +15,7 @@ export type Link = {
   href: string
 }
 
-const Header:React.FC = ():JSX.Element => {
+const Header: React.FC = (): JSX.Element => {
   const navLinks: Array<Link> = [
     { text: 'Про меня', href: '/about' },
     { text: 'Как я работаю', href: '/how--do-i-work' },
@@ -31,15 +31,15 @@ const Header:React.FC = ():JSX.Element => {
         <div className={styles.inner}>
           <Logo />
 
-          <Nav
-            navLinks={navLinks}
-            opened={burgerMenuOpened}
-          />
+          <Nav navLinks={navLinks} opened={burgerMenuOpened} />
 
           <Socials />
+
           <Burger
             burgerMenuOpened={burgerMenuOpened}
-            onClick={() => setBurgerMenuOpened(!burgerMenuOpened)}
+            onClick={() => {
+              setBurgerMenuOpened(!burgerMenuOpened)
+            }}
           />
         </div>
         <div className={styles.contact}>
