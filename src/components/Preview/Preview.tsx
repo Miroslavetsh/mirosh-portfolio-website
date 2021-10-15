@@ -1,5 +1,5 @@
-// Styles
 import Container from '../Container/Container'
+
 import styles from './Preview.module.scss'
 
 const Preview = () => {

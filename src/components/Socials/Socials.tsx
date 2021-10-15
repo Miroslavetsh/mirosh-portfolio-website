@@ -1,8 +1,6 @@
-// Socials
-import TelegramIcon from '../Svg\'s/SocialsIcons/TelegramIcon'
-import InstagramIcon from '../Svg\'s/SocialsIcons/InstagramIcon'
+import TelegramIcon from '../Sprite/SocialsIcons/TelegramIcon'
+import InstagramIcon from '../Sprite/SocialsIcons/InstagramIcon'
 
-// Styles
 import styles from './Socials.module.scss'
 
 type SocLink = {

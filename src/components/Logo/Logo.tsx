@@ -1,4 +1,3 @@
-// Styles
 import styles from './Logo.module.scss'
 
 const Logo: React.FC = (): JSX.Element => {
