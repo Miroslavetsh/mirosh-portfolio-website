@@ -1,44 +1,40 @@
 @mixin logoPainting($name, $color) {
-    @keyframes #{$name} {
-        0% {
-            fill: none;
-            stroke-dashoffset: 190;
-            stroke-dasharray: 190;
-            stroke: $color;
-        }
-        100% {
-            stroke-dasharray: 380;
-            stroke: 0;
-            fill: $color;
-        }
+  @keyframes #{$name} {
+    0% {
+      fill: none;
+      stroke-dashoffset: 190;
+      stroke-dasharray: 190;
+      stroke: $color;
     }
+    100% {
+      stroke-dasharray: 380;
+      stroke: 0;
+      fill: $color;
+    }
+  }
 }
+
 .logo {
-    margin-right: 10px;
-    margin-left: 92px;
-    svg {
-        max-width: 100%;
+  margin-right: 10px;
+  margin-left: 92px;
+  @media (max-width: 1440px) {
+    margin-left: 0;
+  }
+  @media (max-width: 440px) {
+    max-width: 120px;
+  }
+  svg {
+    max-width: 100%;
+  }
+  path {
+    animation: paintGray 10s ease;
+    transition: all 0.4s ease;
+    &:nth-child(2) {
+      animation: paintGold 10s ease;
+      transition: all 0.4s ease;
     }
-    path {
-        animation: paintGray 10s ease;
-        transition: all 0.4s ease;
-        &:nth-child(2) {
-            animation: paintGold 10s ease;
-            transition: all 0.4s ease;
-        }
-    }
+  }
 }
 
 @include logoPainting(paintGray, #272727);
 @include logoPainting(paintGold, #ffc700);
-
-@media (max-width: 1440px) {
-    .logo {
-        margin-left: 0;
-    }
-}
-@media (max-width: 440px) {
-    .logo {
-        max-width: 120px;
-    }
-}

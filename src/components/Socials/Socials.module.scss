@@ -2,6 +2,15 @@
   display: flex;
   align-items: center;
   margin-right: 40px;
+  @media (max-width: 920px) {
+    margin-right: 65px;
+  }
+  @media (max-width: 440px) {
+    margin-right: 51px;
+    .link {
+      margin-right: 10px;
+    }
+  }
   .link {
     margin-right: 24px;
     width: 41px;
@@ -32,19 +41,6 @@
           fill: #ffc700;
         }
       }
-    }
-  }
-}
-@media (max-width: 920px) {
-  .socials {
-    margin-right: 65px;
-  }
-}
-@media (max-width: 440px) {
-  .socials {
-    margin-right: 51px;
-    .link {
-      margin-right: 10px;
     }
   }
 }
