@@ -8,7 +8,7 @@ type SocLink = {
   href: string
 }
 
-const Socials = () => {
+const Socials: React.FC = (): JSX.Element => {
   const socLinks: Array<SocLink> = [
     { icon: <InstagramIcon />, href: 'https://www.instagram.com/myrtolv/' },
     { icon: <TelegramIcon />, href: 'https://telegram.me/myrtol' },

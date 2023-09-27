@@ -7,7 +7,14 @@ $facebook: #3b5998;
 $telegram: #0088cc;
 $twitter: #55adee;
 $linkedin: #2867b2;
-$instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+$instagram: linear-gradient(
+  45deg,
+  #f09433 0%,
+  #e6683c 25%,
+  #dc2743 50%,
+  #cc2366 75%,
+  #bc1888 100%
+);
 $dribble: #ea4c89;
 $whatsup: #25d366;
 
@@ -15,10 +22,31 @@ $whatsup: #25d366;
 
 $gray: #747474;
 
+#root,
+body,
+html,
 .page {
-    overflow-x: hidden;
-    font-family: 'Source Code Pro', monospace;
+  &::-webkit-scrollbar {
+    background: rgba($gray, 0.15);
+    width: 8px;
+    padding-right: 12px;
+    &-thumb {
+      background: #ffc700;
+      border-radius: 8px;
+    }
+  }
+}
 
-    font-size: 10px;
-    min-height: 100vh;
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  font-family: 'Source Code Pro', monospace;
+
+  font-size: 10px;
+  min-height: 100vh;
+  .main {
+    flex: 1 1 auto;
+  }
 }

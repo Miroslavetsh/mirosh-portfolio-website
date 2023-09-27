@@ -1,0 +1,53 @@
+.outer {
+  position: relative;
+}
+
+.photo {
+  position: absolute;
+  top: -88px;
+  right: 0;
+  z-index: -1;
+}
+
+.under {
+  position: absolute;
+  top: 578px;
+  right: 0;
+  z-index: -2;
+}
+
+.div {
+  position: absolute;
+  top: 512px;
+  right: 80px;
+}
+
+.script {
+  position: absolute;
+  top: 120px;
+  right: 660px;
+}
+
+.span {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+}
+
+.mirosh {
+  position: absolute;
+  top: 72px;
+  left: 140px;
+}
+
+.elips {
+  position: absolute;
+  top: 72px;
+  left: -48px;
+}
+
+.elipsSmall {
+  position: absolute;
+  top: 320px;
+  left: 80px;
+}

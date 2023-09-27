@@ -74,7 +74,6 @@
     transition: all 0.4s ease;
     &:hover {
       color: #ffc700;
-      font-weight: 700;
     }
     &::after {
       width: 100%;
@@ -89,9 +88,6 @@
       font-weight: 700;
 
       color: #ffc700;
-      &:hover {
-        -webkit-text-stroke: unset;
-      }
       &::after {
         height: 3px;
         position: absolute;
