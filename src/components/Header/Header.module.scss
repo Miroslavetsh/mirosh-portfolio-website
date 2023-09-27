@@ -51,7 +51,9 @@
     }
 
     @media (max-width: 440px) {
+      justify-content: center;
       max-width: none;
+      gap: 60px;
 
       p {
         display: flex;
@@ -63,6 +65,16 @@
           width: 1px;
           right: 0;
         }
+      }
+
+      .phone {
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
