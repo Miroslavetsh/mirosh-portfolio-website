@@ -7,6 +7,24 @@
   top: -88px;
   right: 0;
   z-index: -1;
+
+  @media (max-width: 1560px) {
+    img {
+      max-inline-size: 920px;
+    }
+  }
+
+  @media (max-width: 1326px) {
+    img {
+      max-inline-size: 820px;
+    }
+  }
+
+  @media (max-width: 1048px) {
+    img {
+      opacity: 0.2;
+    }
+  }
 }
 
 .under {
@@ -14,6 +32,18 @@
   top: 578px;
   right: 0;
   z-index: -2;
+
+  @media (max-width: 1560px) {
+    top: 256px;
+  }
+
+  @media (max-width: 1326px) {
+    top: 126px;
+  }
+
+  @media (max-width: 1048px) {
+    display: none;
+  }
 }
 
 .div {
@@ -38,16 +68,74 @@
   position: absolute;
   top: 72px;
   left: 140px;
+  z-index: -1;
 }
 
 .elips {
   position: absolute;
   top: 72px;
   left: -48px;
+  z-index: -1;
+
+  @media (max-width: 440px) {
+    display: none;
+  }
 }
 
 .elipsSmall {
   position: absolute;
   top: 320px;
   left: 80px;
+  z-index: -1;
+
+  @media (max-width: 1356px) {
+    left: 0;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.text {
+  padding-top: 138px;
+
+  @media (max-width: 1560px) {
+    padding-top: 80px;
+  }
+
+  p {
+    max-width: 485px;
+
+    color: #747474;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 145.7%;
+
+    @media (max-width: 1270px) {
+      max-width: 400px;
+
+      font-size: 16px;
+    }
+  }
+}
+
+.mouse {
+  margin-top: 160px;
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 64px;
+    left: 50%;
+    display: block;
+    width: 1px;
+    height: 109px;
+
+    background: #DBDBDB;
+
+    transform: translate(-50%);
+  }
 }

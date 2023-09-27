@@ -1,49 +1,63 @@
 .header {
   background: #fff;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+
   .container {
     padding-right: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
+
     @media (max-width: 1170px) {
       padding-right: 10px;
     }
   }
+
   .inner {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: relative;
+    z-index: 10;
   }
+
   .contact {
     display: flex;
     justify-content: space-between;
-    max-width: 258px;
+    align-items: center;
+    max-width: 240px;
     width: 100%;
     padding: 21px 0 21px 21px;
     background: #f1f1f1;
+
     @media (max-width: 1170px) {
       position: fixed;
       right: 0;
       bottom: 0;
     }
+
     @media (max-width: 920px) {
       padding: 10px 0 10px 10px;
+
       p {
         font-size: 1.4em;
+
         &::after {
           right: -30px;
         }
       }
     }
+
     @media (max-width: 440px) {
       max-width: none;
+
       p {
         display: flex;
         align-items: center;
         max-width: none;
+
         &::after {
           height: 18px;
           width: 1px;
@@ -51,6 +65,7 @@
         }
       }
     }
+
     p {
       max-width: 106px;
       position: relative;
@@ -60,6 +75,7 @@
       font-size: 1.8em;
       color: #747474;
       line-height: 1.2;
+
       &::after {
         content: '';
         width: 18px;
@@ -73,12 +89,14 @@
       }
     }
   }
+
   .phone {
     padding: 12px 50px 12px 15px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 
     background: #9f0707;
+
     img,
     svg {
       animation-name: shaking;
@@ -88,7 +106,9 @@
       animation-delay: -0.05s;
       animation-duration: 0.27s;
     }
+
     &:hover {
+
       img,
       svg {
         animation-play-state: running;

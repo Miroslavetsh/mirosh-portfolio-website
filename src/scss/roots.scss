@@ -7,14 +7,12 @@ $facebook: #3b5998;
 $telegram: #0088cc;
 $twitter: #55adee;
 $linkedin: #2867b2;
-$instagram: linear-gradient(
-  45deg,
-  #f09433 0%,
-  #e6683c 25%,
-  #dc2743 50%,
-  #cc2366 75%,
-  #bc1888 100%
-);
+$instagram: linear-gradient(45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%);
 $dribble: #ea4c89;
 $whatsup: #25d366;
 
@@ -30,6 +28,7 @@ html,
     background: rgba($gray, 0.15);
     width: 8px;
     padding-right: 12px;
+
     &-thumb {
       background: #ffc700;
       border-radius: 8px;
@@ -46,6 +45,7 @@ html,
 
   font-size: 10px;
   min-height: 100vh;
+
   .main {
     flex: 1 1 auto;
   }

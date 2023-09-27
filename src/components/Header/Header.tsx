@@ -15,14 +15,14 @@ export type Link = {
   href: string
 }
 
-const Header: React.FC = (): JSX.Element => {
-  const navLinks: Array<Link> = [
-    { text: 'Про меня', href: '/about' },
-    { text: 'Как я работаю', href: '/how--do-i-work' },
-    { text: 'Мои работы', href: '/works' },
-    { text: 'Контакты', href: '/contacts' },
-  ]
+const navLinks: Array<Link> = [
+  { text: 'About Me', href: '#about' },
+  // { text: 'How I Work', href: '#how-do-i-work' },
+  { text: 'My certificates', href: '#certificates' },
+  // { text: 'Contacts', href: '#contacts' },
+]
 
+const Header: React.FC = (): JSX.Element => {
   const [burgerMenuOpened, setBurgerMenuOpened] = useState<boolean>(false)
 
   return (
@@ -43,7 +43,7 @@ const Header: React.FC = (): JSX.Element => {
           />
         </div>
         <div className={styles.contact}>
-          <p>Свяжитесь со мной</p>
+          <p>Call Me</p>
 
           <a href='tel:+380975079115' className={styles.phone}>
             <img src={phone} alt='phone' />

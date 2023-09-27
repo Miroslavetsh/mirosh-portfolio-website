@@ -37,8 +37,7 @@ const Nav: React.FC<NavPropsTypes> = (props): JSX.Element => {
                 className={classNames.join(' ')}
                 href={link.href}
                 key={index.toString()}
-                onClick={(event) => {
-                  event.preventDefault()
+                onClick={() => {
                   toggleLinksClass(index)
                 }}>
                 {link.text}
