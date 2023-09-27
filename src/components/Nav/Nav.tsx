@@ -12,7 +12,7 @@ type NavPropsTypes = {
 const Nav: React.FC<NavPropsTypes> = (props): JSX.Element => {
   const { navLinks, opened } = props
 
-  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>()
 
   const toggleLinksClass = (index: number) => {
     setActiveIndex(index)
