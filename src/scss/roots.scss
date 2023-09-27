@@ -40,8 +40,11 @@ html,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-x: hidden;
   font-family: 'Source Code Pro', monospace;
+
+  @media (max-width: 920px) {
+    overflow-x: hidden;
+  }
 
   font-size: 10px;
   min-height: 100vh;
