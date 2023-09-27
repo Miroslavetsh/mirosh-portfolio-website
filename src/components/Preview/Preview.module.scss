@@ -69,6 +69,10 @@
   top: 72px;
   left: 140px;
   z-index: -1;
+
+  @media (max-width: 920px) {
+    display: none;
+  }
 }
 
 .elips {
