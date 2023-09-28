@@ -21,10 +21,10 @@
     margin-left: 0;
   }
   @media (max-width: 440px) {
-    max-width: 120px;
+    max-inline-size: 120px;
   }
   svg {
-    max-width: 100%;
+    max-inline-size: 100%;
   }
   path {
     animation: paintGray 10s ease;

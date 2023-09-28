@@ -6,14 +6,19 @@ type ContainerPropsTypes = {
   children?: ReactNode
   className?: string
   isBig?: boolean
+  id?: string
 }
 
 const Container: React.FC<ContainerPropsTypes> = (props): JSX.Element => {
-  const { children, className, isBig } = props
+  const { children, className, isBig, id } = props
   const classNames = [styles.container, className]
   isBig && classNames.push(styles._big)
 
-  return <div className={classNames.join(' ')}>{children}</div>
+  return (
+    <div id={id} className={classNames.join(' ')}>
+      {children}
+    </div>
+  )
 }
 
 Container.defaultProps = {

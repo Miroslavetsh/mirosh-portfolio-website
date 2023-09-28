@@ -27,10 +27,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 240px;
+    max-inline-size: 240px;
     width: 100%;
     padding: 21px 0 21px 21px;
     background: #f1f1f1;
+    z-index: 100;
 
     @media (max-width: 1170px) {
       position: fixed;
@@ -52,13 +53,13 @@
 
     @media (max-width: 440px) {
       justify-content: center;
-      max-width: none;
+      max-inline-size: none;
       gap: 60px;
 
       p {
         display: flex;
         align-items: center;
-        max-width: none;
+        max-inline-size: none;
 
         &::after {
           height: 18px;
@@ -79,7 +80,7 @@
     }
 
     p {
-      max-width: 106px;
+      max-inline-size: 106px;
       position: relative;
       padding-right: 11px;
 

@@ -1,6 +1,6 @@
 .nav {
   @media (max-width: 920px) {
-    max-width: 320px;
+    max-inline-size: 320px;
     height: 100%;
     min-height: 460px;
     width: 100%;
@@ -45,7 +45,7 @@
     }
   }
   @media (max-width: 440px) {
-    max-width: none;
+    max-inline-size: none;
   }
   .list {
     display: flex;

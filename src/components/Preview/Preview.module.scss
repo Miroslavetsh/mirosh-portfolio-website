@@ -29,7 +29,7 @@
 
 .under {
   position: absolute;
-  top: 578px;
+  top: 458px;
   right: 0;
   z-index: -2;
 
@@ -69,10 +69,6 @@
   top: 72px;
   left: 140px;
   z-index: -1;
-
-  @media (max-width: 920px) {
-    display: none;
-  }
 }
 
 .elips {
@@ -102,14 +98,14 @@
 }
 
 .text {
-  padding-top: 138px;
+  padding-block-start: 138px;
 
   @media (max-width: 1560px) {
-    padding-top: 80px;
+    padding-block-start: 80px;
   }
 
   p {
-    max-width: 485px;
+    max-inline-size: 485px;
 
     color: #747474;
     font-size: 18px;
@@ -117,7 +113,7 @@
     line-height: 145.7%;
 
     @media (max-width: 1270px) {
-      max-width: 400px;
+      max-inline-size: 400px;
 
       font-size: 16px;
     }
