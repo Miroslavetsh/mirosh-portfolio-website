@@ -108,7 +108,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   padding-block-start: 200px;
 
   @media (max-width: 1560px) {

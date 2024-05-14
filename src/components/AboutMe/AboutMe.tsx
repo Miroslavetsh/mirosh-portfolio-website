@@ -12,6 +12,10 @@ import elips from '../../img/preview/elips.svg'
 import styles from './AboutMe.module.scss'
 import Heading from '../Heading/Heading'
 
+const startedProgramming = new Date('2020-01-27').getFullYear()
+const currentYear = new Date().getFullYear()
+const yearsOfDevelopment = currentYear - startedProgramming
+
 const AboutMe: React.FC = () => {
   return (
     <Container id='about' isBig={true} className={styles.outer}>
@@ -47,7 +51,7 @@ const AboutMe: React.FC = () => {
             <table className={styles.list}>
               <tr>
                 <td>Experience</td>
-                <td>3.5 years</td>
+                <td>{yearsOfDevelopment} years</td>
               </tr>
               <tr>
                 <td>Degree</td>
@@ -55,9 +59,9 @@ const AboutMe: React.FC = () => {
               </tr>
             </table>
             <p>
-              Experienced Software Engineer (3.5+ years of experience).
-              Freestyler, Leader, Mentor and Achiever with deep understanding of
-              sustainability and architecture shaping.
+              Experienced Software Engineer ({yearsOfDevelopment}+ years of
+              experience). Freestyler, Leader, Mentor and Achiever with deep
+              understanding of sustainability and architecture shaping.
             </p>
           </div>
         </div>
