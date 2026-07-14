@@ -1,7 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Canvas } from "@react-three/fiber";
+
+import Fox, { FoxAnimationT } from "@/components/3D/models/Fox";
+import Loader from "@/components/3D/Loader/Loader";
+import { useAlert } from "@/hooks/useAlert";
+import { Alert } from "@/components/3D/Contact/Alert";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -11,9 +17,13 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentAnimation, setCurrentAnimation] =
+    useState<FoxAnimationT>("idle");
+
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -21,6 +31,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setCurrentAnimation("hit");
 
     emailjs
       .send(
@@ -33,22 +44,32 @@ export default function Contact() {
           to_email: "dfgshte@gmail.com",
           message: form.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       )
       .then(() => {
-        setForm({ name: "", email: "", message: "" });
+        showAlert({ text: "Message sent successfully", type: "success" });
+        setTimeout(() => {
+          setForm({ name: "", email: "", message: "" });
+          setCurrentAnimation("idle");
+        }, 3000);
       })
       .catch((error) => {
         console.error(error);
+        showAlert({ text: "Something went wrong", type: "danger" });
       })
-      .finally(() => setIsSubmitting(false));
+      .finally(() => {
+        setIsSubmitting(false);
+        setCurrentAnimation("idle");
+      });
   };
 
-  const handleFocus = () => {};
-  const handleBlur = () => {};
+  const handleFocus = () => setCurrentAnimation("walk");
+  const handleBlur = () => setCurrentAnimation("idle");
 
   return (
     <section className="relative flex md:flex-row flex-col max-container">
+      <Alert {...alert} />
+
       <div className="min-w-1/2 flex-1 flex flex-col">
         <h1 className="head-text">Get in touch</h1>
 
@@ -118,6 +139,23 @@ export default function Contact() {
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
+      </div>
+
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+        <Canvas
+          camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}
+        >
+          <directionalLight intensity={2.5} position={[0, 0, 1]} />
+          <ambientLight intensity={0.5} />
+          <Suspense fallback={<Loader />}>
+            <Fox
+              position={[0.5, 0.35, 0]}
+              rotation={[12.6, -0.6, 0]}
+              scale={[0.5, 0.5, 0.5]}
+              currentAnimation={currentAnimation}
+            />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );
