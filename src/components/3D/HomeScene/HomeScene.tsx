@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 import Loader from "@/components/3D/Loader/Loader";
 import Island from "@/components/3D/models/Island";
@@ -16,6 +17,28 @@ import {
 import Popup from "../Popup/Popup";
 
 export default function HomeScene() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+  useEffect(() => {
+    const audio = new Audio("/assets/sakura.mp3");
+    audio.volume = 0.4;
+    audio.loop = true;
+    audioRef.current = audio;
+
+    return () => {
+      audio.pause();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  }, [isPlayingMusic]);
+
   const [isRotating, setIsRotating] = useState(false);
   const [islandScale, islandPosition, islandRotation] =
     adjustIslandForScreenSize();
@@ -59,6 +82,17 @@ export default function HomeScene() {
           />
         </Suspense>
       </Canvas>
+
+      <div className="absolute bottom-2 left-2">
+        <Image
+          src={`/assets/icons/${isPlayingMusic ? "soundoff" : "soundon"}.png`}
+          width={32}
+          height={32}
+          alt="sound-icon"
+          className="cursor-pointer"
+          onClick={() => setIsPlayingMusic((prev) => !prev)}
+        />
+      </div>
     </section>
   );
 }
