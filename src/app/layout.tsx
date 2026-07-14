@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Myroslav Toloshnyi | Software Engineer",
   description: "Myroslav Toloshnyi | Software Engineer",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/assets/favicon.ico",
   },
 };
 
