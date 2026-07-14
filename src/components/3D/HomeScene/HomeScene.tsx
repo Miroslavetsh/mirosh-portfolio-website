@@ -27,7 +27,7 @@ export default function HomeScene() {
       <Popup currentStage={currentStage} />
       <Canvas
         className={clsx(
-          "w-full h-screen bg-transparent",
+          "w-full h-screen bg-transparent touch-none",
           isRotating ? "cursor-grabbing" : "cursor-grab",
         )}
         camera={{ near: 0.1, far: 1000 }}

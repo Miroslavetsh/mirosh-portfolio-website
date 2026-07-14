@@ -30,5 +30,5 @@ export const adjustPlaneForScreenSize = () => {
     screenPosition = [0, -4, -4];
   }
 
-  return [screenScale, screenPosition] as [Axis | null, Axis | null];
+  return [screenScale, screenPosition];
 };
