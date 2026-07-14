@@ -28,7 +28,7 @@ export default function HomeScene() {
       <Canvas
         className={clsx(
           "w-full h-screen bg-transparent",
-          isRotating ? "cursor-grabbing" : "cursor-grab"
+          isRotating ? "cursor-grabbing" : "cursor-grab",
         )}
         camera={{ near: 0.1, far: 1000 }}
       >
@@ -52,8 +52,8 @@ export default function HomeScene() {
             setCurrentStage={setCurrentStage}
           />
           <Plane
-            planeScale={planeScale}
-            planePosition={planePosition}
+            scale={planeScale}
+            position={planePosition}
             isRotating={isRotating}
             rotation={[0, 20, 0]}
           />

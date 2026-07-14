@@ -6,8 +6,8 @@ import { Axis } from "@/lib/3D/types";
 import { Mesh } from "three";
 
 type PlaneProps = React.JSX.IntrinsicElements["mesh"] & {
-  planeScale?: Axis | null;
-  planePosition?: Axis | null;
+  scale?: Axis | null;
+  position?: Axis | null;
   isRotating?: boolean;
 };
 

@@ -11,7 +11,7 @@ const InfoBox: React.FC<InfoBoxProps> = ({ text, link, buttontext }) => {
   return (
     <div className="info-box">
       <p className="font-medium sm:text-xl text-center">{text}</p>
-      <Link className="neo-btn neo-brutalism-white" href={link} target="_blank">
+      <Link className="neo-btn neo-brutalism-white" href={link}>
         {buttontext}
         <Image
           className="w-4 h-4 object-contain"
