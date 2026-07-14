@@ -17,10 +17,9 @@ export type Link = {
 };
 
 const navLinks: Array<Link> = [
-  { text: "About Me", href: "#about" },
-  // { text: 'How I Work', href: '#how-do-i-work' },
-  // { text: "My certificates", href: "#certificates" },
-  // { text: 'Contacts', href: '#contacts' },
+  { text: "About", href: "/about" },
+  { text: "Contact", href: "/contact" },
+  { text: "Experience", href: "/experience" },
 ];
 
 const Header: React.FC = (): React.JSX.Element => {
@@ -31,9 +30,7 @@ const Header: React.FC = (): React.JSX.Element => {
       <Container className={styles.container} isBig={true}>
         <div className={styles.inner}>
           <Logo />
-
           <Nav navLinks={navLinks} opened={burgerMenuOpened} />
-
           <Socials />
 
           <Burger
