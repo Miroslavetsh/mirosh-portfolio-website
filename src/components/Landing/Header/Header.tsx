@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Logo from "../Logo/Logo";
 import Nav from "../Nav/Nav";
@@ -14,6 +14,19 @@ import { navLinks } from "@/lib/navigation";
 
 const Header: React.FC = (): React.JSX.Element => {
   const [burgerMenuOpened, setBurgerMenuOpened] = useState<boolean>(false);
+
+  useEffect(() => {
+    const overflow = burgerMenuOpened ? "hidden" : "";
+    // @ts-ignore
+    document.querySelector(".page").style.overflow = overflow;
+    document.body.style.overflow = overflow;
+
+    return () => {
+      // @ts-ignore
+      document.querySelector(".page").style.overflow = "";
+      document.body.style.overflow = "";
+    };
+  }, [burgerMenuOpened]);
 
   return (
     <header className={styles.header}>
