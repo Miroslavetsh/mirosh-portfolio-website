@@ -1,3 +1,12 @@
 export default async function Projects() {
-  return <div className="container mx-auto">Projects</div>;
+  return (
+    <section className="max-container">
+      <h1 className="head-text">
+        Hello, I'm
+        <span className="blue-gradient_text font-semibold drop-shadow">
+          Myroslav
+        </span>
+      </h1>
+    </section>
+  );
 }
