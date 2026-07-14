@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -52,7 +53,7 @@ export default function Projects() {
               date={experience.date}
               contentStyle={{
                 background: "#fff",
-                boxShadow: "0px 1px 2px 0px rgba(0, 0, 0, 0.05)",
+                boxShadow: `0 4px 0 0 ${experience.iconBg}, 0px 1px 2px 0px rgba(0, 0, 0, 0.05)`,
               }}
               contentArrowStyle={{ borderRight: "7px solid #fff" }}
               iconStyle={{ background: experience.iconBg }}
@@ -69,8 +70,11 @@ export default function Projects() {
               <h3 className="text-black text-[24px] font-bold">
                 {experience.title}
               </h3>
-              <p className="text-black-500 font-semibold text-[16px] m-0">
+              <p className="text-slate-500 font-semibold text-[16px] m-0">
                 {experience.company_name}
+              </p>
+              <p className="text-blue-500 font-medium text-[14px] mt-1">
+                {experience.date}
               </p>
 
               <ul className="mt-5 list-disc ml-5 space-y-2">
@@ -86,6 +90,17 @@ export default function Projects() {
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
+      </div>
+
+      <div className="cta">
+        <p className="cta-text">
+          Have a project in mind?
+          <br />
+          Let&apos;s build something together!
+        </p>
+        <Link href="/contact" className="btn">
+          Contact
+        </Link>
       </div>
     </section>
   );
