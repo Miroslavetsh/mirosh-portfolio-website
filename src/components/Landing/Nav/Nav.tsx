@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 import Link from "next/link";
-import { Link as LinkType } from "../Header/Header";
+import { NavLink } from "@/lib/navigation";
 
 import styles from "./Nav.module.scss";
 
 type NavPropsTypes = {
-  navLinks: Array<LinkType>;
+  navLinks: Array<NavLink>;
   opened: boolean;
 };
 
@@ -15,7 +15,7 @@ const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
 
   const [activeIndex, setActiveIndex] = useState<number>();
 
-  const toggleLinksClass = (index: number) => {
+  const toggleLinksClass = (index: number) => () => {
     setActiveIndex(index);
   };
 
@@ -41,9 +41,7 @@ const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
                 className={classNames.join(" ")}
                 href={link.href}
                 key={index.toString()}
-                onClick={() => {
-                  toggleLinksClass(index);
-                }}
+                onClick={toggleLinksClass(index)}
               >
                 {link.text}
               </Link>

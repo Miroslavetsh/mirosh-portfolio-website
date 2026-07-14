@@ -10,17 +10,7 @@ import Container from "../Container/Container";
 
 import styles from "./Header.module.scss";
 import Link from "next/link";
-
-export type Link = {
-  text: string;
-  href: string;
-};
-
-const navLinks: Array<Link> = [
-  { text: "About", href: "/about" },
-  { text: "Contact", href: "/contact" },
-  { text: "Experience", href: "/experience" },
-];
+import { navLinks } from "@/lib/navigation";
 
 const Header: React.FC = (): React.JSX.Element => {
   const [burgerMenuOpened, setBurgerMenuOpened] = useState<boolean>(false);
