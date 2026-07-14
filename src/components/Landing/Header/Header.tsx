@@ -17,12 +17,12 @@ const Header: React.FC = (): React.JSX.Element => {
 
   useEffect(() => {
     const overflow = burgerMenuOpened ? "hidden" : "";
-    // @ts-ignore
+    // @ts-expect-error
     document.querySelector(".page").style.overflow = overflow;
     document.body.style.overflow = overflow;
 
     return () => {
-      // @ts-ignore
+      // @ts-expect-error
       document.querySelector(".page").style.overflow = "";
       document.body.style.overflow = "";
     };
