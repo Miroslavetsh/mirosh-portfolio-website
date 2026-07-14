@@ -2,18 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-export type Link = {
-  text: string;
-  href: string;
-};
-
-const navLinks: Array<Link> = [
-  { text: "About", href: "/about" },
-  { text: "Projects", href: "/projects" },
-  { text: "Contact", href: "/contact" },
-  { text: "Profile", href: "/profile" },
-];
+import { navLinks } from "@/lib/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();

@@ -1,23 +1,18 @@
-import { useState } from "react";
-
 import Link from "next/link";
-import { Link as LinkType } from "../Header/Header";
+import { usePathname } from "next/navigation";
+import { NavLink } from "@/lib/navigation";
 
 import styles from "./Nav.module.scss";
 
 type NavPropsTypes = {
-  navLinks: Array<LinkType>;
+  navLinks: Array<NavLink>;
   opened: boolean;
 };
 
 const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
   const { navLinks, opened } = props;
 
-  const [activeIndex, setActiveIndex] = useState<number>();
-
-  const toggleLinksClass = (index: number) => {
-    setActiveIndex(index);
-  };
+  const pathname = usePathname();
 
   const classNames = [styles.nav];
 
@@ -29,7 +24,7 @@ const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
             transitionDuration: `${(navLinks.length + Number(index) + 1) / 6}s`,
           };
           const classNames = [styles.link];
-          if (activeIndex === index) classNames.push(styles._active);
+          if (pathname === link.href) classNames.push(styles._active);
 
           return (
             <li
@@ -37,14 +32,7 @@ const Nav: React.FC<NavPropsTypes> = (props): React.JSX.Element => {
               className={styles.item}
               style={delayOnTransiotion}
             >
-              <Link
-                className={classNames.join(" ")}
-                href={link.href}
-                key={index.toString()}
-                onClick={() => {
-                  toggleLinksClass(index);
-                }}
-              >
+              <Link className={classNames.join(" ")} href={link.href}>
                 {link.text}
               </Link>
             </li>

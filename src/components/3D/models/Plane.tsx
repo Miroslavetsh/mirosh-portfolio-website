@@ -2,12 +2,9 @@ import React, { useEffect, useRef } from "react";
 
 import { useAnimations, useGLTF } from "@react-three/drei";
 import planeScene from "@/assets/3D/plane.glb";
-import { Axis } from "@/lib/3D/types";
 import { Mesh } from "three";
 
 type PlaneProps = React.JSX.IntrinsicElements["mesh"] & {
-  planeScale?: Axis | null;
-  planePosition?: Axis | null;
   isRotating?: boolean;
 };
 

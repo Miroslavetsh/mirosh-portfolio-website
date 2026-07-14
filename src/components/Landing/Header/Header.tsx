@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Logo from "../Logo/Logo";
 import Nav from "../Nav/Nav";
@@ -10,30 +10,31 @@ import Container from "../Container/Container";
 
 import styles from "./Header.module.scss";
 import Link from "next/link";
-
-export type Link = {
-  text: string;
-  href: string;
-};
-
-const navLinks: Array<Link> = [
-  { text: "About Me", href: "#about" },
-  // { text: 'How I Work', href: '#how-do-i-work' },
-  // { text: "My certificates", href: "#certificates" },
-  // { text: 'Contacts', href: '#contacts' },
-];
+import { navLinks } from "@/lib/navigation";
 
 const Header: React.FC = (): React.JSX.Element => {
   const [burgerMenuOpened, setBurgerMenuOpened] = useState<boolean>(false);
+
+  useEffect(() => {
+    const overflow = burgerMenuOpened ? "hidden" : "";
+    const pageElem = document.querySelector(".page");
+    // @ts-expect-error selector access
+    if (pageElem) pageElem.style.overflow = overflow;
+    document.body.style.overflow = overflow;
+
+    return () => {
+      // @ts-expect-error selector access
+      if (pageElem) pageElem.style.overflow = "";
+      document.body.style.overflow = "";
+    };
+  }, [burgerMenuOpened]);
 
   return (
     <header className={styles.header}>
       <Container className={styles.container} isBig={true}>
         <div className={styles.inner}>
           <Logo />
-
           <Nav navLinks={navLinks} opened={burgerMenuOpened} />
-
           <Socials />
 
           <Burger
