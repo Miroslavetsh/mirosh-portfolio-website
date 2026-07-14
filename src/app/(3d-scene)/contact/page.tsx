@@ -51,6 +51,7 @@ export default function Contact() {
         setTimeout(() => {
           setForm({ name: "", email: "", message: "" });
           setCurrentAnimation("idle");
+          hideAlert();
         }, 3000);
       })
       .catch((error) => {
@@ -142,9 +143,7 @@ export default function Contact() {
       </div>
 
       <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
-        <Canvas
-          camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}
-        >
+        <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
           <directionalLight intensity={2.5} position={[0, 0, 1]} />
           <ambientLight intensity={0.5} />
           <Suspense fallback={<Loader />}>

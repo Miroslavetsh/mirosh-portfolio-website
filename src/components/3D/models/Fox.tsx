@@ -1,13 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import {
-  AnimationClip,
-  Bone,
-  Group,
-  Material,
-  Object3D,
-  SkinnedMesh,
-} from "three";
+import { AnimationClip, Bone, Group, Material, SkinnedMesh } from "three";
 
 import foxScene from "@/assets/3D/fox.glb";
 
